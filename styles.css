@@ -1,0 +1,105 @@
+:root {
+  color-scheme: dark;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  background-color: #030303;
+  color: #f8f8f8;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+canvas {
+  border: 2px solid #f8f8f8;
+  background: #050505;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.hud {
+  max-width: 240px;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.instructions {
+  line-height: 1.5;
+  font-size: 0.95rem;
+  color: #cfcfcf;
+}
+
+.instructions span {
+  display: inline-flex;
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 1px solid #cfcfcf;
+  border-radius: 0.4rem;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0.25rem;
+}
+
+.status {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.message {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #111;
+  background-color: rgba(248, 248, 248, 0.9);
+  transition: opacity 0.4s ease;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hidden {
+  pointer-events: none;
+  opacity: 0;
+}
+
+.message.visible {
+  pointer-events: all;
+  opacity: 1;
+}
+
+@media (max-width: 1000px) {
+  body {
+    padding: 1rem;
+  }
+
+  .game-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hud {
+    max-width: none;
+    text-align: center;
+  }
+}
